@@ -1,0 +1,22 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+    },
+    "last.imagePath": "C:/dev/programas/Games/Tiled/images",
+    "map.height": 64,
+    "map.lastUsedFormat": "tmx",
+    "map.renderOrder": null,
+    "map.width": 64,
+    "openFiles": [
+    ],
+    "project": "first-map.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
