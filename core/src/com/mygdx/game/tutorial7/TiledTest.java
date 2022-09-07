@@ -7,6 +7,8 @@ import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
@@ -17,18 +19,24 @@ public class TiledTest extends ApplicationAdapter implements InputProcessor {
   TiledMap tiledMap;
   OrthographicCamera camera;
   TiledMapRenderer tiledMapRenderer;
+  SpriteBatch sb;
+  Sprite pikachuSprite;
+  boolean isFlipped = false;
 
   @Override
   public void create() {
+    sb = new SpriteBatch();
     float w = Gdx.graphics.getWidth();
     float h = Gdx.graphics.getHeight();
-
     camera = new OrthographicCamera();
     camera.setToOrtho(false, w, h);
     camera.update();
     tiledMap = new TmxMapLoader().load("tiled/first-map.tmx");
     tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
     Gdx.input.setInputProcessor(this);
+
+    pikachuSprite = new Sprite(new Texture("data/pikachu.png"));
+    pikachuSprite.setPosition(0, 0);
   }
 
   @Override
@@ -39,6 +47,46 @@ public class TiledTest extends ApplicationAdapter implements InputProcessor {
     camera.update();
     tiledMapRenderer.setView(camera);
     tiledMapRenderer.render();
+
+    int speed = 2;
+
+    if (Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
+      speed *= 2;
+    }
+
+    if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+      pikachuSprite.translateY(speed);
+    }
+
+    if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+      pikachuSprite.translateX(speed);
+      if (isFlipped) {
+        isFlipped = false;
+        pikachuSprite.flip(true, false);
+      }
+    }
+
+    if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+      pikachuSprite.translateX(-speed);
+      if (!isFlipped) {
+        isFlipped = true;
+        pikachuSprite.flip(true, false);
+      }
+    }
+
+    if (Gdx.input.isKeyPressed(Input.Keys.S)) {
+      pikachuSprite.translateY(-speed);
+    }
+    sb.begin();
+    pikachuSprite.draw(sb);
+    sb.end();
+
+  }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+    sb.dispose();
   }
 
   @Override

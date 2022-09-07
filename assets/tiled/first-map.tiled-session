@@ -7,16 +7,27 @@
     "expandedProjectPaths": [
     ],
     "fileStates": {
+        "first-map.tmx": {
+            "scale": 0.87578125,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 637.1454058876003,
+                "y": 419.05441570026767
+            }
+        }
     },
     "last.imagePath": "C:/dev/programas/Games/Tiled/images",
-    "map.height": 64,
+    "map.height": 20,
     "map.lastUsedFormat": "tmx",
     "map.renderOrder": null,
-    "map.width": 64,
+    "map.tileHeight": 20,
+    "map.tileWidth": 20,
+    "map.width": 20,
     "openFiles": [
     ],
     "project": "first-map.tiled-project",
     "recentFiles": [
+        "first-map.tmx"
     ],
     "tileset.lastUsedFormat": "tsx"
 }

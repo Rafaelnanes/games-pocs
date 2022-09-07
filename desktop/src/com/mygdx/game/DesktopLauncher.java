@@ -2,15 +2,15 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
-import com.mygdx.game.tutorial7.TiledTest;
+import com.mygdx.game.tutorial7.tiled2.TiledTest2;
 
 // Please note that on macOS your application needs to be started with the -XstartOnFirstThread JVM argument
 public class DesktopLauncher {
   public static void main(String[] arg) {
     Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
     config.setForegroundFPS(60);
-    config.setTitle("Sei lá");
-    config.setWindowedMode(1280, 720);
-    new Lwjgl3Application(new TiledTest(), config);
+    config.setTitle("Bialinda");
+    config.setWindowedMode(400, 400);
+    new Lwjgl3Application(new TiledTest2(), config);
   }
 }
