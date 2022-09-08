@@ -19,7 +19,7 @@ public class TiledTest2 extends ApplicationAdapter {
 
   Stage stage;
   SpriteBatch sb;
-  PikachuActor pikachu;
+  ZeldaPlayer zelda;
 
   @Override
   public void create() {
@@ -34,10 +34,10 @@ public class TiledTest2 extends ApplicationAdapter {
     final MapLayer buffLayer = tiledMap.getLayers().get("flowers");
     tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
 
-    pikachu = new PikachuActor(collisionLayer.getObjects(), buffLayer.getObjects());
+    zelda = new ZeldaPlayer(collisionLayer.getObjects(), buffLayer.getObjects());
 
     stage = new Stage();
-    stage.addActor(pikachu);
+    stage.addActor(zelda);
   }
 
   @Override
