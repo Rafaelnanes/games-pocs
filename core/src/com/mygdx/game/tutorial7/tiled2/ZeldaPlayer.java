@@ -59,7 +59,6 @@ public class ZeldaPlayer extends Actor {
 
     for (Rectangle rectanglesCollision : bufferCollisions) {
       if (playerRectangle.overlaps(rectanglesCollision)) {
-        System.out.println("buffer");
         speed *= 2;
         break;
       }
@@ -87,7 +86,6 @@ public class ZeldaPlayer extends Actor {
 
     for (Rectangle rectanglesCollision : rectanglesCollisions) {
       if (playerRectangle.overlaps(rectanglesCollision)) {
-        System.out.println("colidiu");
         playerRectangle.setPosition(oldX, oldY);
         break;
       }

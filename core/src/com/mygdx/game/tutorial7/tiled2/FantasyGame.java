@@ -12,7 +12,7 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
-public class TiledTest2 extends ApplicationAdapter {
+public class FantasyGame extends ApplicationAdapter {
   TiledMap tiledMap;
   OrthographicCamera camera;
   TiledMapRenderer tiledMapRenderer;
